@@ -1,0 +1,47 @@
+//Assessment1.3
+//student data and results
+#include <stdio.h>
+
+struct Student{
+    int Rollno;
+    char Name[50];
+    float Physicsmarks;
+    float Chemistrymarks;
+    float Mathsmarks;
+    float totalmarks;
+    float percentage;
+}
+
+readdata(struct Student *student) {
+    printf("Enter Roll no. : \n");
+    scanf("%d", &(student->Rollno));
+    printf("Enter Name : \n");
+    scanf(" %[^\n]s", student->Name);
+    printf("Enter Physics marks : \n");
+    scanf("%f", &(student->Physicsmarks));
+    printf("Enter Chemistry marks : \n");
+    scanf("%f", &(student->Chemistrymarks));
+    printf("Enter Maths marks : \n");
+    scanf("%f", &(student->Mathsmarks));
+
+    student->totalmarks = student->Physicsmarks + student->Chemistrymarks + student->Mathsmarks;
+    student->percentage = student->totalmarks/300.0*100.0;
+    
+    printf("\n");
+    printf("Roll No.: %d\n", student->Rollno);
+    printf("Name: %s\n", student->Name);
+    printf("Physics Marks: %.2f\n", student->Physicsmarks);
+    printf("Chemistry Marks: %.2f\n", student->Chemistrymarks);
+    printf("Math Marks: %.2f\n", student->Mathsmarks);
+    
+    printf("Total Marks: %.2f\n", student->totalmarks);
+    printf("Percentage: %.2f%%\n", student->percentage);
+    
+}
+
+int main() {
+    struct Student student;
+    readdata(&student);
+    
+    return 0;
+}
