@@ -1,0 +1,24 @@
+//Assessment 1.2
+//Grade of a student
+#include <stdio.h>
+int main()
+{
+    int marks;
+    printf("enter marks : \n");
+    scanf("%d",&marks);
+    
+    if(marks<=100 && marks>=90) 
+    printf("Grade is A");
+    else if(marks<=89 && marks>=75) 
+    printf("Grade is B");
+    else if(marks<=74 && marks>=60) 
+    printf("Grade is C");
+    else if(marks<=59 && marks>=50) 
+    printf("Grade is D");
+    else if(marks<=49 && marks>=0) 
+    printf("Grade is F");
+    else
+    printf("Wrong input");
+    return 0;
+}
+
