@@ -1,0 +1,14 @@
+//using if-else
+int find_big(int a, int b)
+{
+    if(a>b){
+    return a;
+    }
+    else{
+    return b;
+    }
+}
+
+//using terniary operator
+int find_big(int a, int b) {
+    return (a > b) ? a : b;
