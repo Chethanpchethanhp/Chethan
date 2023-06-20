@@ -1,0 +1,36 @@
+//Assessment 2.4
+//number of bits in an array
+
+#include <stdio.h>
+
+int countSetBits(int num) {
+    int count = 0;
+    while (num != 0) {
+        count += num & 1;
+        num >>= 1;
+    }
+    return count;
+}
+
+int main() {
+    
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
+
+    int array[n];
+    printf("Enter %d elements of the array:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+    }
+    
+    int totalSetBits = 0;
+
+    for (int i = 0; i < n; i++) {
+        totalSetBits += countSetBits(array[i]);
+    }
+
+    printf("Total number of set bits in the given array: %d\n", totalSetBits);
+
+    return 0;
+}
