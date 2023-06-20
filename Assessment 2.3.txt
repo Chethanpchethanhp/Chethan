@@ -1,0 +1,23 @@
+//Assessment 2.3
+//sum of alternate no. of array
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("enter size: ");
+    scanf("%d",&n);
+    
+    int array[n];
+    printf("Enter %d elements of the array:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+    }
+    int sum = 0;
+    for (int i = 0; i < n; i += 2) {
+        sum += array[i];
+    }
+
+    printf("Sum of alternate elements: %d\n", sum);
+    return 0;
+}
