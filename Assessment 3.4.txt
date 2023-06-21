@@ -1,0 +1,61 @@
+//Assessment 3.4
+//smallest and largest digit in each number
+
+#include <stdio.h>
+#include <limits.h>
+
+int getSmallestDigit(int num) {
+    int smallest = 9;
+
+    while (num != 0) {
+        int digit = num % 10;
+        if (digit < smallest) {
+            smallest = digit;
+        }
+        num /= 10;
+    }
+
+    return smallest;
+}
+
+int getLargestDigit(int num) {
+    int largest = 0;
+
+    while (num != 0) {
+        int digit = num % 10;
+        if (digit > largest) {
+            largest = digit;
+        }
+        num /= 10;
+    }
+
+    return largest;
+}
+
+void findSmallestAndLargestDigits(int n) {
+    int i;
+    int smallestDigit, largestDigit;
+    int num;
+
+    for (i = 1; i <= n; i++) {
+        printf("Enter number %d: ", i);
+        scanf("%d", &num);
+
+        smallestDigit = getSmallestDigit(num);
+        largestDigit = getLargestDigit(num);
+
+        printf("Smallest digit: %d\n", smallestDigit);
+        printf("Largest digit: %d\n", largestDigit);
+        printf("\n");
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter the number of numbers: ");
+    scanf("%d", &n);
+
+    findSmallestAndLargestDigits(n);
+
+    return 0;
+}
